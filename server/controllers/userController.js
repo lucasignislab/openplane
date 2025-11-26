@@ -52,3 +52,27 @@ exports.getUserDashboardStats = async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 };
+
+// @desc    Atualizar Perfil do Usuário
+// @route   PUT /api/v1/users/me
+// @access  Private
+exports.updateProfile = async (req, res) => {
+    try {
+        const { name, email, profilePicture } = req.body;
+
+        // Encontrar e atualizar usuário
+        const user = await User.findByIdAndUpdate(
+            req.user.id,
+            { name, email, profilePicture },
+            { new: true, runValidators: true }
+        ).select('-password');
+
+        if (!user) {
+            return res.status(404).json({ success: false, message: 'Usuário não encontrado' });
+        }
+
+        res.status(200).json({ success: true, data: user });
+    } catch (error) {
+        res.status(400).json({ success: false, error: error.message });
+    }
+};

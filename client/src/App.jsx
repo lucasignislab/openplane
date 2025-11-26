@@ -17,6 +17,7 @@ import MyIssues from './pages/MyIssues';
 import ProjectDetails from './pages/ProjectDetails';
 import Cycles from './pages/Cycles';
 import CycleDetails from './pages/CycleDetails';
+import SettingsLayout from './pages/settings/SettingsLayout';
 
 function App() {
   // Inicializar keyboard shortcuts
@@ -51,6 +52,7 @@ function App() {
           <Route path="/projects/:projectId" element={<ProjectDetails />} />
           <Route path="/projects/:projectId/cycles" element={<Cycles />} />
           <Route path="/cycles/:cycleId" element={<CycleDetails />} />
+          <Route path="/settings" element={<SettingsLayout />} />
         </Route>
 
         {/* Fallback */}
