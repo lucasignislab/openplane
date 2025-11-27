@@ -1,6 +1,6 @@
 const express = require('express');
 const { protect } = require('../middleware/authMiddleware');
-const { createIssue, getIssues, getIssueById, getComments, addComment } = require('../controllers/issueController');
+const { createIssue, getIssues, getIssueById, getComments, addComment, updateIssue, deleteIssue } = require('../controllers/issueController');
 
 const router = express.Router();
 
@@ -11,7 +11,9 @@ router.route('/')
     .get(getIssues);
 
 router.route('/:id')
-    .get(getIssueById);
+    .get(getIssueById)
+    .put(updateIssue)
+    .delete(deleteIssue);
 
 router.route('/:id/comments')
     .get(getComments)

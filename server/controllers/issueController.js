@@ -138,3 +138,47 @@ exports.addComment = async (req, res) => {
         res.status(400).json({ success: false, error: error.message });
     }
 };
+
+// @desc    Atualizar Issue
+// @route   PUT /api/v1/issues/:id
+// @access  Private
+exports.updateIssue = async (req, res) => {
+    try {
+        let issue = await Issue.findById(req.params.id);
+
+        if (!issue) {
+            return res.status(404).json({ success: false, message: 'Issue não encontrada' });
+        }
+
+        // Atualizar
+        issue = await Issue.findByIdAndUpdate(req.params.id, req.body, {
+            new: true,
+            runValidators: true
+        })
+            .populate('state')
+            .populate('assignees', 'name profilePicture');
+
+        res.status(200).json({ success: true, data: issue });
+    } catch (error) {
+        res.status(400).json({ success: false, error: error.message });
+    }
+};
+
+// @desc    Deletar Issue
+// @route   DELETE /api/v1/issues/:id
+// @access  Private
+exports.deleteIssue = async (req, res) => {
+    try {
+        const issue = await Issue.findById(req.params.id);
+
+        if (!issue) {
+            return res.status(404).json({ success: false, message: 'Issue não encontrada' });
+        }
+
+        await issue.deleteOne();
+
+        res.status(200).json({ success: true, data: {} });
+    } catch (error) {
+        res.status(500).json({ success: false, error: error.message });
+    }
+};

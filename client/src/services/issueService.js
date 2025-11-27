@@ -1,31 +1,62 @@
 import api from './api';
 
+// Buscar Issues por Projeto
+export const getByProject = async (projectId) => {
+    const response = await api.get(`/issues?projectId=${projectId}`);
+    return response.data;
+};
+
+// Criar Issue
+export const create = async (issueData) => {
+    const response = await api.post('/issues', issueData);
+    return response.data;
+};
+
+// Atualizar Issue
+export const update = async (issueId, issueData) => {
+    const response = await api.put(`/issues/${issueId}`, issueData);
+    return response.data;
+};
+
+// Deletar Issue
+export const deleteIssue = async (issueId) => {
+    const response = await api.delete(`/issues/${issueId}`);
+    return response.data;
+};
+
+// Obter detalhes completos
+export const getById = async (issueId) => {
+    const response = await api.get(`/issues/${issueId}`);
+    return response.data;
+};
+
+// Buscar comentários
+export const getComments = async (issueId) => {
+    const response = await api.get(`/issues/${issueId}/comments`);
+    return response.data;
+};
+
+// Postar comentário
+export const addComment = async (issueId, text) => {
+    const response = await api.post(`/issues/${issueId}/comments`, { text });
+    return response.data;
+};
+
+// Buscar atividades (Log)
+export const getActivities = async (issueId) => {
+    // Placeholder para futuro endpoint de atividades
+    return [];
+};
+
 const issueService = {
-    // Obter detalhes completos (incluindo activity log se o backend suportar ou fizermos endpoints separados)
-    getById: async (issueId) => {
-        const response = await api.get(`/issues/${issueId}`); // Precisamos garantir que essa rota existe/retorna o que precisamos
-        return response.data;
-    },
-
-    // Buscar comentários
-    getComments: async (issueId) => {
-        const response = await api.get(`/issues/${issueId}/comments`); // Rota que criamos antes?
-        return response.data;
-    },
-
-    // Postar comentário
-    addComment: async (issueId, text) => {
-        const response = await api.post(`/issues/${issueId}/comments`, { text });
-        return response.data;
-    },
-
-    // Buscar atividades (Log)
-    getActivities: async (issueId) => {
-        // Precisamos criar essa rota no backend se não existir, 
-        // mas vamos assumir por hora que usamos a rota genérica de activities filtrada
-        // Para o MVP, vamos focar nos comentários primeiro.
-        return [];
-    }
+    getByProject,
+    create,
+    update,
+    deleteIssue,
+    getById,
+    getComments,
+    addComment,
+    getActivities
 };
 
 export default issueService;
