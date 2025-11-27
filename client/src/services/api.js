@@ -1,7 +1,13 @@
 import axios from 'axios';
 
+// Em produção (Vercel), usa a variável de ambiente.
+// Em desenvolvimento (Antigravity), usa o proxy '/api/v1'.
+const baseURL = import.meta.env.VITE_API_URL
+    ? `${import.meta.env.VITE_API_URL}/api/v1` // Adiciona /api/v1 se vier da ENV
+    : '/api/v1';
+
 const api = axios.create({
-    baseURL: '/api/v1', // O Vite fará o proxy para http://localhost:5001/api/v1
+    baseURL: baseURL,
     headers: {
         'Content-Type': 'application/json',
     },

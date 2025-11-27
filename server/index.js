@@ -101,11 +101,17 @@ app.use((err, req, res, next) => {
 });
 
 // ==========================================
-// Inicialização do Servidor
+// Inicialização do Servidor (Adaptado para Vercel)
 // ==========================================
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-    console.log(`Servidor rodando em modo ${process.env.NODE_ENV} na porta ${PORT}`);
-});
+// Se estiver rodando localmente (não na Vercel), inicia o servidor na porta
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`Servidor rodando localmente na porta ${PORT}`);
+    });
+}
+
+// Exporta o app para a Vercel (Serverless)
+module.exports = app;
