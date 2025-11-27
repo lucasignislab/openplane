@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import workspaceService from '../services/workspaceService';
+import workspaceService from '@/services/workspaceService';
 
 const useWorkspaceStore = create((set) => ({
     workspaces: [],

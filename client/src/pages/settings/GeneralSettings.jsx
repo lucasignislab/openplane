@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import useWorkspaceStore from '../../context/useWorkspaceStore';
-import workspaceService from '../../services/workspaceService';
+import useWorkspaceStore from '@/context/useWorkspaceStore';
+import workspaceService from '@/services/workspaceService';
 
 const GeneralSettings = () => {
     const { currentWorkspace, fetchWorkspaces } = useWorkspaceStore();

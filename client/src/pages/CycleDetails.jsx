@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import cycleService from '../services/cycleService';
-import api from '../services/api'; // Para buscar states
-import BoardColumn from '../components/board/BoardColumn';
+import cycleService from '@/services/cycleService';
+import api from '@/services/api'; // Para buscar states
+import BoardColumn from '@/components/board/BoardColumn';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import { format } from 'date-fns';
 import { pt } from 'date-fns/locale';
 import { DragDropContext } from '@hello-pangea/dnd';
-import useIssueStore from '../context/useIssueStore'; // Reutilizar update logic
+import useIssueStore from '@/context/useIssueStore'; // Reutilizar update logic
 
 const CycleDetails = () => {
     const { cycleId, projectId } = useParams(); // Precisamos garantir que a rota passe isso

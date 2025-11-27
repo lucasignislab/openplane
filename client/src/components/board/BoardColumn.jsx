@@ -1,7 +1,7 @@
 import { Droppable } from '@hello-pangea/dnd';
 import { Plus, MoreHorizontal } from 'lucide-react';
 import IssueCard from './IssueCard';
-import useUIStore from '../../context/useUIStore';
+import useUIStore from '@/context/useUIStore';
 
 const BoardColumn = ({ state, issues, projectIdentifier, onIssueClick }) => {
     const { openIssueModal } = useUIStore();

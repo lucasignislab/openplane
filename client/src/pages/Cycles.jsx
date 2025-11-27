@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { Plus, Calendar, Layout } from 'lucide-react';
-import cycleService from '../services/cycleService';
-import CreateCycleModal from '../components/cycles/CreateCycleModal';
+import cycleService from '@/services/cycleService';
+import CreateCycleModal from '@/components/cycles/CreateCycleModal';
 import { format } from 'date-fns';
 import { pt } from 'date-fns/locale';
 

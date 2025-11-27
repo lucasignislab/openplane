@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import * as issueService from '../services/issueService';
+import * as issueService from '@/services/issueService';
 
 const useIssueStore = create((set, get) => ({
     issues: [],

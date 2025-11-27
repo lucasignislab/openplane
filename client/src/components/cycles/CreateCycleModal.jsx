@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import api from '../../services/api'; // Atalho direto ou use a store
+import api from '@/services/api'; // Atalho direto ou use a store
 
 const CreateCycleModal = ({ isOpen, onClose, projectId, onSuccess }) => {
     const [formData, setFormData] = useState({

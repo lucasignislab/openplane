@@ -1,6 +1,6 @@
 import { DragDropContext } from '@hello-pangea/dnd';
 import BoardColumn from './BoardColumn';
-import useIssueStore from '../../context/useIssueStore';
+import useIssueStore from '@/context/useIssueStore';
 
 const KanbanBoard = ({ projectIdentifier, onIssueClick }) => {
     const { issues, states, updateIssueStatus } = useIssueStore();

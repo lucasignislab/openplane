@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import useAuthStore from '../context/authStore';
+import useAuthStore from '@/context/authStore';
 
 function Welcome() {
     const navigate = useNavigate();

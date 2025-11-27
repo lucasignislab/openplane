@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import useUIStore from '../context/useUIStore';
+import useUIStore from '@/context/useUIStore';
 
 /**
  * Hook que adiciona listeners de teclado globais para atalhos

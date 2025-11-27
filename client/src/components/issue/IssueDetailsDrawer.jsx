@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import Drawer from '../ui/Drawer';
-import RichTextEditor from '../ui/RichTextEditor'; // Reusar nosso editor
-import api from '../../services/api'; // Chamada direta para simplificar
+import Drawer from '@/components/ui/Drawer';
+import RichTextEditor from '@/components/ui/RichTextEditor'; // Reusar nosso editor
+import api from '@/services/api'; // Chamada direta para simplificar
 import {
     Calendar,
     User,

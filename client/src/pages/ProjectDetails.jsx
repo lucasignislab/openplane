@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
-import useIssueStore from '../context/useIssueStore';
-import useUIStore from '../context/useUIStore';
-// import useProjectStore from '../context/useProjectStore'; // Opcional se precisar de dados do projeto
-import KanbanBoard from '../components/board/KanbanBoard';
-import ListView from '../components/list/ListView'; // <--- Importar
+import useIssueStore from '@/context/useIssueStore';
+import useUIStore from '@/context/useUIStore';
+// import useProjectStore from '@/context/useProjectStore'; // Opcional se precisar de dados do projeto
+import KanbanBoard from '@/components/board/KanbanBoard';
+import ListView from '@/components/list/ListView'; // <--- Importar
 import {
     Filter,
     Plus,
@@ -14,7 +14,7 @@ import {
     Repeat
 } from 'lucide-react';
 
-import IssueDetailsDrawer from '../components/issue/IssueDetailsDrawer'; // <--- Importar
+import IssueDetailsDrawer from '@/components/issue/IssueDetailsDrawer'; // <--- Importar
 
 const ProjectDetails = () => {
     const { projectId } = useParams();

@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 import AppSidebar from './AppSidebar';
-import GlobalIssueModal from '../GlobalIssueModal';
+import GlobalIssueModal from '@/components/GlobalIssueModal';
 
 const AppLayout = () => {
     return (

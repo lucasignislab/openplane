@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { X, User, Circle, Repeat } from 'lucide-react';
-import useUIStore from '../context/useUIStore';
-import useWorkspaceStore from '../context/useWorkspaceStore';
-import useProjectStore from '../context/useProjectStore';
-import useIssueStore from '../context/useIssueStore';
+import useUIStore from '@/context/useUIStore';
+import useWorkspaceStore from '@/context/useWorkspaceStore';
+import useProjectStore from '@/context/useProjectStore';
+import useIssueStore from '@/context/useIssueStore';
 import RichTextEditor from './ui/RichTextEditor';
-import api from '../services/api';
-import cycleService from '../services/cycleService';
+import api from '@/services/api';
+import cycleService from '@/services/cycleService';
 
 const GlobalIssueModal = () => {
     const { isIssueModalOpen, closeIssueModal } = useUIStore();

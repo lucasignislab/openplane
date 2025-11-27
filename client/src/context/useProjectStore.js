@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import projectService from '../services/projectService';
+import projectService from '@/services/projectService';
 
 const useProjectStore = create((set) => ({
     projects: [],

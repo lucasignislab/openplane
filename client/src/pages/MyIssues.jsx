@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { CheckCircle2, Filter } from 'lucide-react';
-import api from '../services/api';
-import IssueListRow from '../components/list/IssueListRow';
+import api from '@/services/api';
+import IssueListRow from '@/components/list/IssueListRow';
 
 const MyIssues = () => {
     const [issues, setIssues] = useState([]);

@@ -16,10 +16,10 @@ import {
     File,
     ChevronDown
 } from 'lucide-react';
-import useAuthStore from '../../context/authStore';
-import useWorkspaceStore from '../../context/useWorkspaceStore';
-import useProjectStore from '../../context/useProjectStore';
-import useUIStore from '../../context/useUIStore';
+import useAuthStore from '@/context/authStore';
+import useWorkspaceStore from '@/context/useWorkspaceStore';
+import useProjectStore from '@/context/useProjectStore';
+import useUIStore from '@/context/useUIStore';
 
 const AppSidebar = () => {
     const location = useLocation();

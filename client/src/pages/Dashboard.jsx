@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import useAuthStore from '../context/authStore';
-import api from '../services/api';
+import useAuthStore from '@/context/authStore';
+import api from '@/services/api';
 import { Link } from 'react-router-dom';
 import { Clock, CheckCircle2, Layout, Plus } from 'lucide-react';
 

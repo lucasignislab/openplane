@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X } from 'lucide-react';
-import useProjectStore from '../context/useProjectStore';
-import useWorkspaceStore from '../context/useWorkspaceStore';
+import useProjectStore from '@/context/useProjectStore';
+import useWorkspaceStore from '@/context/useWorkspaceStore';
 
 const CreateProjectModal = ({ isOpen, onClose }) => {
     const navigate = useNavigate();

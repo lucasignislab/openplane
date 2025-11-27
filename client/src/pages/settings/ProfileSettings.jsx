@@ -1,4 +1,4 @@
-import useAuthStore from '../../context/useAuthStore';
+import useAuthStore from '@/context/useAuthStore';
 
 const ProfileSettings = () => {
     const { user } = useAuthStore();

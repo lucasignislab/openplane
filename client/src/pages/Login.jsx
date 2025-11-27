@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import useAuthStore from '../context/authStore';
+import useAuthStore from '@/context/authStore';
 
 // Schema de validação
 const loginSchema = z.object({

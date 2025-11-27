@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Trash2, Mail, Plus, Shield, User } from 'lucide-react';
-import useWorkspaceStore from '../../context/useWorkspaceStore';
-import workspaceService from '../../services/workspaceService';
-import useAuthStore from '../../context/useAuthStore';
+import useWorkspaceStore from '@/context/useWorkspaceStore';
+import workspaceService from '@/services/workspaceService';
+import useAuthStore from '@/context/useAuthStore';
 
 const MembersSettings = () => {
     const { currentWorkspace, fetchWorkspaces } = useWorkspaceStore();
