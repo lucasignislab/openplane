@@ -4,9 +4,9 @@ import GlobalIssueModal from '@/components/GlobalIssueModal';
 
 const AppLayout = () => {
     return (
-        <div className="flex h-screen overflow-hidden bg-[#151516]">
+        <div className="flex h-screen overflow-hidden bg-slate-50">
             <AppSidebar />
-            <main className="flex-1 overflow-y-auto bg-[#151516] relative text-[#E0E1EC]">
+            <main className="flex-1 overflow-y-auto bg-slate-50 relative text-slate-900">
                 <div className="min-h-screen">
                     <Outlet />
                 </div>
